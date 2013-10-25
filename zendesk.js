@@ -1,6 +1,6 @@
 var email =$('edocr_widget').readAttribute('email');
 $j(document).ready(function() {
-  var url ='/proxy/direct?url=http://www.edocr.com/integrations/zendesk?email='+email;
+  var url ='/proxy/direct?url=/zendesk?email='+email;
   $j.ajax({
             url: url,
             async: false,
@@ -38,7 +38,7 @@ $j(document).ready(function() {
 function searchDocuments(form){
  var result_str ="";
  var search_term = form['q'].value;
- var url = '/proxy/direct?url=http://www.edocr.com/integrations/zendesk/search?q='+search_term;
+ var url = '/proxy/direct?url=/zendesk/search?q='+search_term;
  if(search_term.length > 3){
   $j.ajax({
             url: url,
@@ -106,7 +106,7 @@ function moreDocuments(page){
  query = query.replace("^","");
  query += "^"+new_limit;
  
- var url = '/proxy/direct?url=http://www.edocr.com/integrations/zendesk/search/more?q='+query;
+ var url = '/proxy/direct?url=/zendesk/search/more?q='+query;
   $j.ajax({
             url: url,
             async: false,
